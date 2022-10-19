@@ -1,6 +1,6 @@
-exo1:
-    path: /hello-world
+exo3:
+    path: /hello-world1
     controller: App\Controller\DefaultController::hello
-exo2:
-    path: /hello-world/{name?Name}
+exo4:
+    path: /hello-world1/{name?Name}
     controller: App\Controller\DefaultController::helloName
