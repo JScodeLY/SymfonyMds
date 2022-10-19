@@ -52,4 +52,19 @@ class DefaultController extends AbstractController
     {
         return new Response("Salut ". $nom);
     }
+     /**
+     * @Route("/hello-world", name="exo1")
+     */
+    public function hello() 
+    {
+        return new Response("<H1>Hello World</H1>");
+    }
+     /**
+     * @Route("/hello-world/{name?Name}", name="exo2")
+     */
+    public function helloName($name) 
+    {
+        return new Response("<H1>Hello $name </H1> ");
+    }
+
 }

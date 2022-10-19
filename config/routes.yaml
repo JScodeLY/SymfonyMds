@@ -1,3 +1,6 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+exo1:
+    path: /hello-world
+    controller: App\Controller\DefaultController::hello
+exo2:
+    path: /hello-world/{name?Name}
+    controller: App\Controller\DefaultController::helloName
