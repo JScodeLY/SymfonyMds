@@ -2,8 +2,9 @@
 
 {% block title %}Home
 {% endblock %}
-
 {% block body %}
+
+	<h1>Liste des contacts</h1>
 		
 	<table class="table table-striped">
 		<thead>
@@ -12,6 +13,9 @@
 				<th scope="col">Nom</th>
 				<th scope="col">Prénom</th>
 				<th scope="col">Téléphone</th>
+				<th scope="col">Adresse</th>
+				<th scope="col">Ville</th>
+				<th scope="col">Age</th>
 				<th scope="col">Action</th>
 
 			</tr>
@@ -23,8 +27,11 @@
 				<th scope="row">{{contact.id}}</th>
 				<td>{{contact.nom}}</td>
 				<td>{{contact.prenom}}</td>
-				<td>{{contact.Number}}</td>
-				<td><a href="{{path('contact')}}" type="button" class="btn btn-info">Afficher</a></td>
+				<td>{{contact.telephone}}</td>
+				<td>{{contact.adresse}}</td>
+				<td>{{contact.ville}}</td>
+				<td>{{contact.age}}</td>
+				<td><a href="{{path('findContact', {id:contact.id})}}" type="button" class="btn btn-info">Afficher</a></td>
 			</tr>
 			
 		</tbody>
