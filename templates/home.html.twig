@@ -16,7 +16,7 @@
 				<th scope="col">Adresse</th>
 				<th scope="col">Ville</th>
 				<th scope="col">Age</th>
-				<th scope="col">Action</th>
+				<th >Action</th>
 
 			</tr>
 		</thead>
@@ -31,7 +31,9 @@
 				<td>{{contact.adresse}}</td>
 				<td>{{contact.ville}}</td>
 				<td>{{contact.age}}</td>
-				<td><a href="{{path('findContact', {id:contact.id})}}" type="button" class="btn btn-info">Afficher</a></td>
+				<td><a href="{{path('findContact', {id:contact.id})}}" type="button" class="btn btn-info">Afficher</a>
+				<a href="{{path('updateTelephoneContact', {id:contact.id})}}" type="button" class="btn btn-warning">Modifier</a>
+				<a href="{{path('deleteContact', {id:contact.id})}}" type="button" class="btn btn-danger">Supprimer</a></td>
 			</tr>
 			
 		</tbody>

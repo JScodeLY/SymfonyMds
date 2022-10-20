@@ -79,4 +79,56 @@ class ContactController extends AbstractController
         ]
     );
     }    
+    /**
+     * @Route("/contact/update/{id}", name="updateTelephoneContact")
+     */
+    public function updateTelephoneContact(ManagerRegistry $doctrine, int $id ): Response
+    {
+        $entityManager = $doctrine->getManager();
+
+        $contact = $entityManager->getRepository(Contact::class)->find($id);
+        $contacts = $entityManager->getRepository(Contact::class)->findAll();
+        // dd($contacts);
+        // if (!$contact){
+        //     throw $this->createNotFoundException(
+        //         'Not product found for id'.$id
+        //     );
+        // }
+        $contact->setTelephone("New Telephone");
+        
+        $entityManager->persist($contact,$contacts);
+        $entityManager->flush();
+            // dd($contact);
+        return $this->render('home.html.twig',[
+            "contacts"=> $contacts,
+           
+        ]
+    );
+    }    
+    /**
+     * @Route("/contact/delete/{id}", name="deleteContact")
+     */
+    public function deleteContact(ManagerRegistry $doctrine, int $id ): Response
+    {
+        $entityManager = $doctrine->getManager();
+
+        $contact = $entityManager->getRepository(Contact::class)->find($id);
+        // $contacts = $entityManager->getRepository(Contact::class)->findAll();
+        // dd($contacts);
+        if (!$contact){
+            throw $this->createNotFoundException(
+                'Not contact found for id'.$id
+            );
+        }
+        $entityManager->remove($contact);
+        // $entityManager->persist($contacts);
+        
+        $entityManager->flush();
+            // dd($contact);
+        return $this->redirectToRoute('findAllContact',[
+            
+           
+        ]
+    );
+    }    
 }
