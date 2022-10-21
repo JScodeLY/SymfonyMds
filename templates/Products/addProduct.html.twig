@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block title %}Hello productController{% endblock %}
+
+{% block body %}
+{# {{ form(formulaireProduit)}} #} 
+{{ form_start(formulaireProduit)}}
+    <div class= "row mt-4">
+        <div class="col">
+        {{ form_label(formulaireProduit.name, "Nom du produit")}} 
+        {{ form_widget(formulaireProduit.name)}} 
+        </div>
+        <div class='col'>
+        {{ form_label(formulaireProduit.price, "Prix du produit", )}}
+         {{ form_widget(formulaireProduit.price)}}
+        </div>
+        <div class="col">
+        {{ form_label(formulaireProduit.description, "Description du produit")}}
+         {{ form_widget(formulaireProduit.description)}}
+        </div>
+    </div>
+{{ form_end(formulaireProduit)}}
+{% endblock %}
