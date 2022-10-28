@@ -24,7 +24,7 @@ class HomeController extends AbstractController
     {
         $entityManager = $doctrine->getManager();
 
-        $contacts = $entityManager->getRepository(Contact::class)->findAll();
+        $contacts = $entityManager->getRepository(Contact::class)->findByAge(18);
         $entityManager->flush();
         // $tableau = array(
         //     "1" => array("id"=>1,"nom" => "Lebron", "prenom" => "James", "Number" => "0123456789"),

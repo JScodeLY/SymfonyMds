@@ -3,6 +3,14 @@
 {% block title %}Home
 {% endblock %}
 {% block body %}
+{% for message in app.flashes('add_contact')%}
+	<div class="alert alert-success" role="alert">
+  {{message}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
 
 	<h1>Liste des contacts</h1>
 		
@@ -32,7 +40,7 @@
 				<td>{{contact.ville}}</td>
 				<td>{{contact.age}}</td>
 				<td><a href="{{path('findContact', {id:contact.id})}}" type="button" class="btn btn-info">Afficher</a>
-				<a href="{{path('updateTelephoneContact', {id:contact.id})}}" type="button" class="btn btn-warning">Modifier</a>
+				<a href="{{path('updateContact', {id:contact.id})}}" type="button" class="btn btn-warning">Modifier</a>
 				<a href="{{path('deleteContact', {id:contact.id})}}" type="button" class="btn btn-danger">Supprimer</a></td>
 			</tr>
 			

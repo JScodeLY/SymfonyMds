@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter un contact
+{% endblock %}
+
+{% block body %}
+	{# {{ form(formulaireProduit)}} #}
+	<div class="container">
+		{{ form_start(formulaireUpdateContact,{'attr': {'novalidate': 'novalidate'}})}}
+		<div class="mb-3 row">
+			<label for="text" class="col-sm-2 col-form-label">{{ form_label(formulaireUpdateContact.nom, "Modifie ton nom")}}</label>
+			<div class="col-sm-10">
+				{{ form_widget(formulaireUpdateContact.nom)}}
+			</div>
+		</div>
+		<div class="mb-3 row">
+			<label for="text" class="col-sm-2 col-form-label">{{ form_label(formulaireUpdateContact.prenom, "Modifie ton Prénom")}}</label>
+			<div class="col-sm-10">
+				{{ form_widget(formulaireUpdateContact.prenom)}}
+			</div>
+		</div>
+		<div class="mb-3 row">
+			<label for="text" class="col-sm-2 col-form-label">{{ form_label(formulaireUpdateContact.adresse, "Modifie ton adresse")}}</label>
+			<div class="col-sm-10">
+				{{ form_widget(formulaireUpdateContact.adresse)}}
+			</div>
+		</div>
+		<div class="mb-3 row">
+			<label for="text" class="col-sm-2 col-form-label">{{ form_label(formulaireUpdateContact.ville, "Modifie ta ville")}}</label>
+			<div class="col-sm-10">
+				{{ form_widget(formulaireUpdateContact.ville)}}
+			</div>
+		</div>
+		<div class="mb-3 row">
+			<label for="text" class="col-sm-2 col-form-label">{{ form_label(formulaireUpdateContact.age, "Modifie ton age")}}</label>
+			<div class="col-sm-10">
+				{{ form_widget(formulaireUpdateContact.age)}}
+			</div>
+		</div>
+		<div class="mb-3 row">
+			<label for="text" class="col-sm-2 col-form-label">{{ form_label(formulaireUpdateContact.telephone, "Modifie ton numéro de téléphone")}}</label>
+			<div class="col-sm-10">
+				{{ form_widget(formulaireUpdateContact.telephone)}}
+			</div>
+		</div>
+		
+		{# <div class="row mt-6">
+			<div class="col">
+				{{ form_label(formulaireUpdateContact.nom, "Ajouter ton nom")}}
+				{{ form_widget(formulaireUpdateContact.nom)}}
+			</div>
+			<div class='col'>
+				{{ form_label(formulaireUpdateContact.prenom, "Ajouter ton prénom", )}}
+				{{ form_widget(formulaireUpdateContact.prenom)}}
+			</div>
+		</div>
+		<div class="row mt-6">
+			<div class="col">
+				{{ form_label(formulaireUpdateContact.adresse, "Ajouter ton adresse")}}
+				{{ form_widget(formulaireUpdateContact.adresse)}}
+			</div>
+			<div class="col">
+				{{ form_label(formulaireUpdateContact.ville, "Ajouter ta ville")}}
+				{{ form_widget(formulaireUpdateContact.ville)}}
+			</div>
+			<div class="col">
+				{{ form_label(formulaireUpdateContact.age, "Quel est ton âge")}}
+				{{ form_widget(formulaireUpdateContact.age)}}
+			</div>
+		</div> #}
+		{{ form_end(formulaireUpdateContact)}}
+	</div>
+
+
+{% endblock %}

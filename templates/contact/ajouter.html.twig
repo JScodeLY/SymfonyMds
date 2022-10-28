@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter un contact
+{% endblock %}
+
+{% block body %}
+	{# {{ form(formulaireProduit)}} #}
+	<div class="container">
+		{{ form_start(formulaireContact,{'attr': {'novalidate': 'novalidate'}})}}
+
+		<div class="row mt-6">
+			<div class="col">
+				{{ form_label(formulaireContact.nom, "Ajouter ton nom")}}
+				{{ form_widget(formulaireContact.nom)}}
+			</div>
+			<div class='col'>
+				{{ form_label(formulaireContact.prenom, "Ajouter ton prénom", )}}
+				{{ form_widget(formulaireContact.prenom)}}
+			</div>
+		</div>
+		<div class="row mt-6">
+			<div class="col">
+				{{ form_label(formulaireContact.adresse, "Ajouter ton adresse")}}
+				{{ form_widget(formulaireContact.adresse)}}
+			</div>
+			<div class="col">
+				{{ form_label(formulaireContact.ville, "Ajouter ta ville ")}}
+				{{ form_widget(formulaireContact.ville)}}
+			</div>
+			<div class="col">
+				{{ form_label(formulaireContact.age, "Quel est ton âge ?")}}
+				{{ form_widget(formulaireContact.age)}}
+			</div>
+			<div class="col">
+				{{ form_label(formulaireContact.telephone, "Quel est ton numéro de téléphone")}}
+				{{ form_widget(formulaireContact.telephone)}}
+			</div>
+		</div>
+		{{ form_end(formulaireContact)}}
+	</div>
+
+
+{% endblock %}
